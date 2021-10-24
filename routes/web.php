@@ -15,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\PortalController::class, 'index']);
 
-Route::get('/register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::match(['GET','POST'], '/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register');
+
 
